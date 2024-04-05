@@ -73,7 +73,10 @@ export const sendEmailOTP = async (req, res) => {
 
         console.log("process.env.SENDER_EMAIL",process.env.SENDER_EMAIL);
         var transporter = nodemailer.createTransport({
-            service: 'Gmail',
+            // service: 'Gmail',
+            // secure: true,
+            host: 'smtp.gmail.com',
+            port: 465,
             secure: true,
             auth: {
                 user: process.env.SENDER_EMAIL,
