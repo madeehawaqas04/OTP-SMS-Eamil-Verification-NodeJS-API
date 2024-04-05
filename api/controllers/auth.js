@@ -78,6 +78,7 @@ export const sendEmailOTP = async (req, res) => {
             host: 'smtp.gmail.com',
             port: 465,
             secure: true,
+            greetingTimeout: 30000,
             auth: {
                 user: process.env.SENDER_EMAIL,
                 pass: process.env.SENDER_EMAIL_PASSWORD
