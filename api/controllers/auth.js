@@ -75,9 +75,10 @@ export const sendEmailOTP = async (req, res) => {
         var transporter = nodemailer.createTransport({
             // service: 'Gmail',
             // secure: true,
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
+            host: "smtp.mailtrap.io",
+            secure: false,
+            requireTLS: true,
+            port: 2525,
             greetingTimeout: 30000,
             auth: {
                 user: process.env.SENDER_EMAIL,
